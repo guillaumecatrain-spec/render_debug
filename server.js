@@ -14,9 +14,7 @@ app.get("/stormglass", async (req, res) => {
   const LON = -3.4560;
 
   try {
-    const url =
-      `https://api.stormglass.io/v2/ocean/point?lat=${LAT}&lng=${LON}` +
-      `&params=windSpeed,windDirection,waveHeight,wavePeriod&source=sg`;
+    const url = `https://api.stormglass.io/v2/ocean/point?lat=${LAT}&lng=${LON}&params=windSpeed,windDirection,waveHeight,wavePeriod&source=sg`;
 
     const response = await fetch(url, {
       headers: { Authorization: SG_KEY }
@@ -33,6 +31,7 @@ app.get("/stormglass", async (req, res) => {
   }
 });
 
+// Page d’accueil
 app.get("/", (req, res) => {
   res.send("✅ Serveur en ligne. Essayez /stormglass");
 });
@@ -40,3 +39,4 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`✅ API running on http://localhost:${PORT}`);
 });
+
