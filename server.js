@@ -33,6 +33,11 @@ app.get("/stormglass", async (req, res) => {
   }
 });
 
+// ✅ AJOUTE CETTE PARTIE EXACTEMENT ICI
+app.get("/", (req, res) => {
+  res.send("✅ Serveur en ligne. Essayez /stormglass");
+});
+// ✅ FIN DE LA PARTIE À AJOUTER
 app.listen(PORT, () => {
   console.log(`✅ API running on http://localhost:${PORT}`);
 });
