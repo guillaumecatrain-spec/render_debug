@@ -24,6 +24,7 @@ app.get("/stormglass", async (req, res) => {
 
     const data = await response.text();
     res.status(response.status).send(data);
+
   } catch (err) {
     res.status(500).json({
       error: "Erreur serveur",
